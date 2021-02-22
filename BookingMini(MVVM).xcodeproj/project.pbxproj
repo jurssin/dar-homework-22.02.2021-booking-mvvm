@@ -1,0 +1,484 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE66DE5025E243F500617884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66DE4F25E243F500617884 /* AppDelegate.swift */; };
+		CE66DE5225E243F500617884 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66DE5125E243F500617884 /* SceneDelegate.swift */; };
+		CE66DE5425E243F500617884 /* SearchHotelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66DE5325E243F500617884 /* SearchHotelsViewController.swift */; };
+		CE66DE5925E243F700617884 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE66DE5825E243F700617884 /* Assets.xcassets */; };
+		CE66DE5C25E243F700617884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE66DE5A25E243F700617884 /* LaunchScreen.storyboard */; };
+		CE66DE6425E2482100617884 /* FavouriteHotelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE66DE6325E2482100617884 /* FavouriteHotelsTableViewController.swift */; };
+		CEBDE40625E24B26001E6713 /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDE40525E24B26001E6713 /* HotelModel.swift */; };
+		CEBDE40925E24E2F001E6713 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CEBDE40825E24E2F001E6713 /* Moya */; };
+		CEBDE40B25E24E2F001E6713 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CEBDE40A25E24E2F001E6713 /* ReactiveMoya */; };
+		CEBDE40D25E24E2F001E6713 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CEBDE40C25E24E2F001E6713 /* RxMoya */; };
+		CEBDE40F25E24E4B001E6713 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBDE40E25E24E4B001E6713 /* APIService.swift */; };
+		CEE7734D25E25D31001066A0 /* DetailedHotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7734C25E25D31001066A0 /* DetailedHotel.swift */; };
+		CEE7734F25E29C5B001066A0 /* SearchHotelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7734E25E29C5B001066A0 /* SearchHotelsViewModel.swift */; };
+		CEE7735125E2A137001066A0 /* SearchHotelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735025E2A137001066A0 /* SearchHotelsTableViewCell.swift */; };
+		CEE7735825E370B0001066A0 /* DetailedHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735725E370B0001066A0 /* DetailedHotelViewController.swift */; };
+		CEE7735A25E37FDF001066A0 /* DetailedHotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735925E37FDF001066A0 /* DetailedHotelViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE66DE4C25E243F500617884 /* BookingMini(MVVM).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BookingMini(MVVM).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE66DE4F25E243F500617884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE66DE5125E243F500617884 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE66DE5325E243F500617884 /* SearchHotelsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelsViewController.swift; sourceTree = "<group>"; };
+		CE66DE5825E243F700617884 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE66DE5B25E243F700617884 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE66DE5D25E243F700617884 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE66DE6325E2482100617884 /* FavouriteHotelsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteHotelsTableViewController.swift; sourceTree = "<group>"; };
+		CEBDE40525E24B26001E6713 /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
+		CEBDE40E25E24E4B001E6713 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		CEE7734C25E25D31001066A0 /* DetailedHotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHotel.swift; sourceTree = "<group>"; };
+		CEE7734E25E29C5B001066A0 /* SearchHotelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelsViewModel.swift; sourceTree = "<group>"; };
+		CEE7735025E2A137001066A0 /* SearchHotelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelsTableViewCell.swift; sourceTree = "<group>"; };
+		CEE7735725E370B0001066A0 /* DetailedHotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHotelViewController.swift; sourceTree = "<group>"; };
+		CEE7735925E37FDF001066A0 /* DetailedHotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHotelViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE66DE4925E243F500617884 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEBDE40D25E24E2F001E6713 /* RxMoya in Frameworks */,
+				CEBDE40925E24E2F001E6713 /* Moya in Frameworks */,
+				CEBDE40B25E24E2F001E6713 /* ReactiveMoya in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE66DE4325E243F500617884 = {
+			isa = PBXGroup;
+			children = (
+				CE66DE4E25E243F500617884 /* BookingMini(MVVM) */,
+				CE66DE4D25E243F500617884 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE66DE4D25E243F500617884 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE66DE4C25E243F500617884 /* BookingMini(MVVM).app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE66DE4E25E243F500617884 /* BookingMini(MVVM) */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7735325E36AA1001066A0 /* DetailedHotelModule */,
+				CEE7735225E36562001066A0 /* NetworkLayer */,
+				CEBDE40425E248F8001E6713 /* Common */,
+				CEBDE40325E248E5001E6713 /* MainModule */,
+				CE66DE5D25E243F700617884 /* Info.plist */,
+				CE66DE6325E2482100617884 /* FavouriteHotelsTableViewController.swift */,
+			);
+			path = "BookingMini(MVVM)";
+			sourceTree = "<group>";
+		};
+		CEBDE40025E248C8001E6713 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEBDE40525E24B26001E6713 /* HotelModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEBDE40125E248CF001E6713 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE66DE5325E243F500617884 /* SearchHotelsViewController.swift */,
+				CEE7735025E2A137001066A0 /* SearchHotelsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEBDE40225E248DD001E6713 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7734E25E29C5B001066A0 /* SearchHotelsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CEBDE40325E248E5001E6713 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEBDE40225E248DD001E6713 /* ViewModel */,
+				CEBDE40125E248CF001E6713 /* View */,
+				CEBDE40025E248C8001E6713 /* Model */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		CEBDE40425E248F8001E6713 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CE66DE4F25E243F500617884 /* AppDelegate.swift */,
+				CE66DE5125E243F500617884 /* SceneDelegate.swift */,
+				CE66DE5825E243F700617884 /* Assets.xcassets */,
+				CE66DE5A25E243F700617884 /* LaunchScreen.storyboard */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CEE7735225E36562001066A0 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CEBDE40E25E24E4B001E6713 /* APIService.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		CEE7735325E36AA1001066A0 /* DetailedHotelModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7735625E36ABA001066A0 /* ViewModel */,
+				CEE7735525E36AB4001066A0 /* View */,
+				CEE7735425E36AAF001066A0 /* Model */,
+			);
+			path = DetailedHotelModule;
+			sourceTree = "<group>";
+		};
+		CEE7735425E36AAF001066A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7734C25E25D31001066A0 /* DetailedHotel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE7735525E36AB4001066A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7735725E370B0001066A0 /* DetailedHotelViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE7735625E36ABA001066A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7735925E37FDF001066A0 /* DetailedHotelViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE66DE4B25E243F500617884 /* BookingMini(MVVM) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE66DE6025E243F700617884 /* Build configuration list for PBXNativeTarget "BookingMini(MVVM)" */;
+			buildPhases = (
+				CE66DE4825E243F500617884 /* Sources */,
+				CE66DE4925E243F500617884 /* Frameworks */,
+				CE66DE4A25E243F500617884 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BookingMini(MVVM)";
+			packageProductDependencies = (
+				CEBDE40825E24E2F001E6713 /* Moya */,
+				CEBDE40A25E24E2F001E6713 /* ReactiveMoya */,
+				CEBDE40C25E24E2F001E6713 /* RxMoya */,
+			);
+			productName = "BookingMini(MVVM)";
+			productReference = CE66DE4C25E243F500617884 /* BookingMini(MVVM).app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE66DE4425E243F500617884 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Syrym Zhursin";
+				TargetAttributes = {
+					CE66DE4B25E243F500617884 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = CE66DE4725E243F500617884 /* Build configuration list for PBXProject "BookingMini(MVVM)" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE66DE4325E243F500617884;
+			packageReferences = (
+				CEBDE40725E24E2F001E6713 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
+			productRefGroup = CE66DE4D25E243F500617884 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE66DE4B25E243F500617884 /* BookingMini(MVVM) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE66DE4A25E243F500617884 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE66DE5C25E243F700617884 /* LaunchScreen.storyboard in Resources */,
+				CE66DE5925E243F700617884 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE66DE4825E243F500617884 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEE7734D25E25D31001066A0 /* DetailedHotel.swift in Sources */,
+				CEBDE40625E24B26001E6713 /* HotelModel.swift in Sources */,
+				CEE7735125E2A137001066A0 /* SearchHotelsTableViewCell.swift in Sources */,
+				CEE7735A25E37FDF001066A0 /* DetailedHotelViewModel.swift in Sources */,
+				CEE7735825E370B0001066A0 /* DetailedHotelViewController.swift in Sources */,
+				CE66DE5425E243F500617884 /* SearchHotelsViewController.swift in Sources */,
+				CEBDE40F25E24E4B001E6713 /* APIService.swift in Sources */,
+				CE66DE5025E243F500617884 /* AppDelegate.swift in Sources */,
+				CE66DE6425E2482100617884 /* FavouriteHotelsTableViewController.swift in Sources */,
+				CE66DE5225E243F500617884 /* SceneDelegate.swift in Sources */,
+				CEE7734F25E29C5B001066A0 /* SearchHotelsViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE66DE5A25E243F700617884 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE66DE5B25E243F700617884 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE66DE5E25E243F700617884 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE66DE5F25E243F700617884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE66DE6125E243F700617884 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BookingMini(MVVM)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Syrym-Zhursin.BookingMini-MVVM-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE66DE6225E243F700617884 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "BookingMini(MVVM)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Syrym-Zhursin.BookingMini-MVVM-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE66DE4725E243F500617884 /* Build configuration list for PBXProject "BookingMini(MVVM)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE66DE5E25E243F700617884 /* Debug */,
+				CE66DE5F25E243F700617884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE66DE6025E243F700617884 /* Build configuration list for PBXNativeTarget "BookingMini(MVVM)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE66DE6125E243F700617884 /* Debug */,
+				CE66DE6225E243F700617884 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEBDE40725E24E2F001E6713 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEBDE40825E24E2F001E6713 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEBDE40725E24E2F001E6713 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		CEBDE40A25E24E2F001E6713 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEBDE40725E24E2F001E6713 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		CEBDE40C25E24E2F001E6713 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEBDE40725E24E2F001E6713 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CE66DE4425E243F500617884 /* Project object */;
+}
