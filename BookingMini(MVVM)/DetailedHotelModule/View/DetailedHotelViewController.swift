@@ -78,6 +78,15 @@ class DetailedHotelViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
+    
+    lazy var availableRoomsLabel: UILabel = {
+        let label = UILabel()
+        //label.backgroundColor = .systemPink
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.numberOfLines = 0
+        return label
+    }()
 
     var hotelId: Int?
     var hotelName: String?
@@ -96,8 +105,8 @@ class DetailedHotelViewController: UIViewController {
             self?.starsLabel.text = String(stars)
             self?.addressLabel.text = hotel?.address
             self?.distanceLabel.text = "\((hotel?.distance) ?? 0.0) meters away from center"
+            self?.availableRoomsLabel.text = "Rooms available: \(hotel?.suitesAvailability ?? "No available rooms")"
         }
-        
         // Do any additional setup after loading the view.
     }
     private func setHotelImage(imageName: String) {
@@ -111,7 +120,6 @@ class DetailedHotelViewController: UIViewController {
         }
         spinner.stopAnimating()
     }
-    
 }
 
 extension DetailedHotelViewController {
@@ -120,7 +128,7 @@ extension DetailedHotelViewController {
         title = hotelName
         view.backgroundColor = .secondarySystemBackground
         
-        let viewElements = [hotelImageView, hotelNameLabel, starIconImageView, starsLabel, addressLabel, locationIconImageView, distanceLabel, spinner]
+        let viewElements = [hotelImageView, hotelNameLabel, starIconImageView, starsLabel, addressLabel, locationIconImageView, distanceLabel, spinner, availableRoomsLabel]
         viewElements.forEach { (element) in
             element.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(element)
@@ -158,7 +166,11 @@ extension DetailedHotelViewController {
             distanceLabel.trailingAnchor.constraint(equalTo: addressLabel.trailingAnchor),
             
             spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            availableRoomsLabel.topAnchor.constraint(equalTo: locationIconImageView.bottomAnchor, constant: 10),
+            availableRoomsLabel.leadingAnchor.constraint(equalTo: locationIconImageView.leadingAnchor),
+            availableRoomsLabel.trailingAnchor.constraint(equalTo: starIconImageView.leadingAnchor)
         ])
     }
 }
