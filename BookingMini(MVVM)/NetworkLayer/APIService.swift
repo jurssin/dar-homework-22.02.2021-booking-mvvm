@@ -27,7 +27,7 @@ extension APIService: TargetType {
         case .getDetailedHotel(let id):
             return "\(id).json"
         case .getHotelImage(let id):
-            return "\(id).jpg"
+            return "\(id)"
         }
     }
     

@@ -33,7 +33,15 @@ class DetailedHotelViewModel {
         }
     }
     
-    func getImage(id: Int) {
-        
+    func getImage(id: String, completion: @escaping (Data) -> ()) {
+        provider.request(.getHotelImage(id: (id))) { (result) in
+            switch result {
+            case.success(let response):
+                completion(response.data)
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
     }
 }
