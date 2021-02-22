@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Moya
 
 class DetailedHotelViewModel {
@@ -14,7 +15,7 @@ class DetailedHotelViewModel {
     let provider = MoyaProvider<APIService>()
     var detailedHotel: DetailedHotel?
     
-    func getDetailedHotels(id: Int, completion: @escaping (DetailedHotel?) -> ()) {
+    public func getDetailedHotels(id: Int, completion: @escaping (DetailedHotel?) -> ()) {
         provider.request(.getDetailedHotel(id: String(id))) { [weak self] (result) in
             switch result {
             case .success(let response):
@@ -33,7 +34,7 @@ class DetailedHotelViewModel {
         }
     }
     
-    func getImage(id: String, completion: @escaping (Data) -> ()) {
+    public func getImage(id: String, completion: @escaping (Data) -> ()) {
         provider.request(.getHotelImage(id: (id))) { (result) in
             switch result {
             case.success(let response):

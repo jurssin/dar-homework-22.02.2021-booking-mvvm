@@ -71,6 +71,31 @@ class SearchHotelsViewController: UIViewController {
         self.tabBarController?.tabBar.items![1].image = UIImage(systemName: "heart.fill")
         self.tabBarController?.tabBar.items![1].title = "Favourite Hotels"
         self.tabBarController?.tabBar.tintColor = .black
+        
+        let barButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortList))
+        barButton.tintColor = .black
+        self.navigationItem.rightBarButtonItem = barButton
+        
+    }
+    
+    @objc func sortList() {
+        let alert = UIAlertController(title: "Sort", message: "Select sorting method", preferredStyle: .actionSheet)
+        let distanceSort = UIAlertAction(title: "Distance", style: .default) { [weak self] (action) in
+            self?.viewModel.sortByDistanceHotelList {
+                self?.hotelsTableView.reloadData()
+            }
+        }
+        let roomsSort = UIAlertAction(title: "Available rooms", style: .default) { [weak self] (action) in
+            self?.viewModel.sortByRoomsHotelList {
+                self?.hotelsTableView.reloadData()
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(distanceSort)
+        alert.addAction(roomsSort)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
 }
 

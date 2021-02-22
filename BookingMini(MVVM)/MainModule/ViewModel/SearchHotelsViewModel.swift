@@ -34,21 +34,18 @@ class SearchHotelsViewModel {
         }
     }
     
-//    private func getDetailedHotel(id: String) {
-//        provider.request(.getDetailedHotel(id: id)) { (result) in
-//            switch result {
-//
-//            case .success(let response):
-//                do {
-//                    let response = try JSONDecoder().decode(DetailedHotel.self, from: response.data)
-//                    print(response)
-//
-//                } catch let error {
-//                    print("Decoding error: \(error.localizedDescription)")
-//                }
-//            case .failure(let error):
-//                print("Can't reach to data \(error.localizedDescription)")
-//            }
-//        }
-//    }
+    func sortByDistanceHotelList(completion: () -> ()) {
+        self.hotels = hotels.sorted { (a, b) -> Bool in
+            a.distance < b.distance
+        }
+        completion()
+    }
+    
+    func sortByRoomsHotelList(completion: () -> ()) {
+        self.hotels = hotels.sorted(by: { (a, b) -> Bool in
+            a.suitesAvailability.count > b.suitesAvailability.count
+        })
+        completion()
+    }
+    
 }
