@@ -14,7 +14,6 @@ class SearchHotelsViewController: UIViewController {
     lazy var spinner: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         activityIndicator.color = .black
-        //activityIndicator.backgroundColor = .secondaryLabel
         activityIndicator.hidesWhenStopped = true
         return activityIndicator
     }()
