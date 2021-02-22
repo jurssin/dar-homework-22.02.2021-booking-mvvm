@@ -11,6 +11,14 @@ import Moya
 
 class SearchHotelsViewController: UIViewController {
     
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.showsCancelButton = true
+        searchBar.placeholder = "Search hotels by address..."
+        searchBar.delegate = self
+        return searchBar
+    }()
+    
     lazy var spinner: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
         activityIndicator.color = .black
@@ -32,12 +40,16 @@ class SearchHotelsViewController: UIViewController {
     }()
     
     let viewModel = SearchHotelsViewModel()
+    var hotelList = [Hotel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupView()
+        hideKeyboardWhenTappedAround()
         viewModel.getHotels { [weak self] in
+            self?.hotelList = self?.viewModel.hotels ?? []
+
             self?.hotelsTableView.reloadData()
             self?.spinner.stopAnimating()
         }
@@ -47,14 +59,20 @@ class SearchHotelsViewController: UIViewController {
         view.backgroundColor = .secondarySystemBackground
         title = "Hotel Search"
         navBarSetup()
-        let viewElements = [hotelsTableView, spinner]
+        let viewElements = [hotelsTableView, spinner, searchBar]
         viewElements.forEach { (element) in
             element.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(element)
         }
         
         NSLayoutConstraint.activate([
-            hotelsTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchBar.heightAnchor.constraint(equalToConstant: 50),
+            
+            hotelsTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
             hotelsTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             hotelsTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             hotelsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
@@ -96,6 +114,24 @@ class SearchHotelsViewController: UIViewController {
         alert.addAction(roomsSort)
         alert.addAction(cancelAction)
         present(alert, animated: true)
+    }
+}
+extension SearchHotelsViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.endEditing(true)
+        viewModel.hotels = hotelList
+        hotelsTableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.filterList(by: searchText) {
+            hotelsTableView.reloadData()
+        }
+        if searchText.isEmpty {
+            viewModel.hotels = hotelList
+            hotelsTableView.reloadData()
+        }
     }
 }
 

@@ -23,6 +23,7 @@
 		CEE7735125E2A137001066A0 /* SearchHotelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735025E2A137001066A0 /* SearchHotelsTableViewCell.swift */; };
 		CEE7735825E370B0001066A0 /* DetailedHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735725E370B0001066A0 /* DetailedHotelViewController.swift */; };
 		CEE7735A25E37FDF001066A0 /* DetailedHotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735925E37FDF001066A0 /* DetailedHotelViewModel.swift */; };
+		CEE7735C25E4168A001066A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735B25E4168A001066A0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		CEE7735025E2A137001066A0 /* SearchHotelsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHotelsTableViewCell.swift; sourceTree = "<group>"; };
 		CEE7735725E370B0001066A0 /* DetailedHotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHotelViewController.swift; sourceTree = "<group>"; };
 		CEE7735925E37FDF001066A0 /* DetailedHotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHotelViewModel.swift; sourceTree = "<group>"; };
+		CEE7735B25E4168A001066A0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				CE66DE5125E243F500617884 /* SceneDelegate.swift */,
 				CE66DE5825E243F700617884 /* Assets.xcassets */,
 				CE66DE5A25E243F700617884 /* LaunchScreen.storyboard */,
+				CEE7735B25E4168A001066A0 /* Extensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				CEE7735825E370B0001066A0 /* DetailedHotelViewController.swift in Sources */,
 				CE66DE5425E243F500617884 /* SearchHotelsViewController.swift in Sources */,
 				CEBDE40F25E24E4B001E6713 /* APIService.swift in Sources */,
+				CEE7735C25E4168A001066A0 /* Extensions.swift in Sources */,
 				CE66DE5025E243F500617884 /* AppDelegate.swift in Sources */,
 				CE66DE6425E2482100617884 /* FavouriteHotelsTableViewController.swift in Sources */,
 				CE66DE5225E243F500617884 /* SceneDelegate.swift in Sources */,

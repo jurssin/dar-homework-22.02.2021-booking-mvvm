@@ -13,6 +13,7 @@ class SearchHotelsViewModel {
     
     let provider = MoyaProvider<APIService>()
     var hotels = [Hotel]()
+    var dupHotels = [Hotel]()
     
     func getHotels(completion: @escaping () -> ()) {
         provider.request(.getHotels) { [weak self] (result) in
@@ -48,4 +49,10 @@ class SearchHotelsViewModel {
         completion()
     }
     
+    func filterList(by searchText: String, completion: () -> ()) {
+        self.hotels = searchText.isEmpty ? hotels : hotels.filter({ (hotel) -> Bool in
+            return hotel.address.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        })
+        completion()
+    }
 }
