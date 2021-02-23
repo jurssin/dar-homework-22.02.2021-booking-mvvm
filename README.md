@@ -6,3 +6,4 @@
 - Sorting hotel list by distance to center
 - Sorting hotel list by number of available rooms
 - Favourite hotel list by UserDefaults
+- MapKit with annotation of latitude and longitude from API
