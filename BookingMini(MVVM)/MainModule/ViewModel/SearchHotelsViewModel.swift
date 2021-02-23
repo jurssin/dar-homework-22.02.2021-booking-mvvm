@@ -29,7 +29,7 @@ class SearchHotelsViewModel {
                     print(error.localizedDescription)
                 }
             case .failure(let error):
-                print("failuer - \(error.localizedDescription)")
+                print("failure - \(error.localizedDescription)")
             }
             
         }

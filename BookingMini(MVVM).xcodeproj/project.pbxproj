@@ -81,9 +81,9 @@
 				CEE7735325E36AA1001066A0 /* DetailedHotelModule */,
 				CEE7735225E36562001066A0 /* NetworkLayer */,
 				CEBDE40325E248E5001E6713 /* MainModule */,
-				CE66DE5D25E243F700617884 /* Info.plist */,
 				CEBDE40425E248F8001E6713 /* Common */,
 				CE66DE6325E2482100617884 /* FavouriteHotelsTableViewController.swift */,
+				CE66DE5D25E243F700617884 /* Info.plist */,
 			);
 			path = "BookingMini(MVVM)";
 			sourceTree = "<group>";
