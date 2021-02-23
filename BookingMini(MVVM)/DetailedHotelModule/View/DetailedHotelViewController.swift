@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DetailedHotelViewController: UIViewController {
     
@@ -87,7 +88,15 @@ class DetailedHotelViewController: UIViewController {
         label.numberOfLines = 0
         return label
     }()
-
+    
+    lazy var mapView: MKMapView = {
+        let map = MKMapView()
+        return map
+    }()
+    
+    
+    var annotation = MKPointAnnotation()
+    var region = MKCoordinateRegion()
     var hotelId: Int?
     var hotelName: String?
     let viewModel = DetailedHotelViewModel()
@@ -98,7 +107,11 @@ class DetailedHotelViewController: UIViewController {
         setupView()
         
         viewModel.getDetailedHotels(id: hotelId!) { [weak self] (hotel) in
-           
+            
+            self?.annotation.coordinate = CLLocationCoordinate2D(latitude: hotel?.lat ?? 0.0, longitude: hotel?.lon ?? 0.0)
+            self?.mapView.addAnnotation(self!.annotation)
+            self?.region = .init(center: (self?.annotation.coordinate)!, latitudinalMeters: 500, longitudinalMeters: 500)
+            self?.mapView.setRegion(self!.region, animated: true)
             self?.hotelNameLabel.text = self?.hotelName
             self?.addressLabel.text = hotel?.address
             self?.distanceLabel.text = "\((hotel?.distance) ?? 0.0) meters away from center"
@@ -137,7 +150,7 @@ extension DetailedHotelViewController {
         spinner.startAnimating()
         view.backgroundColor = .secondarySystemBackground
         
-        let viewElements = [hotelImageView, hotelNameLabel, starIconImageView, starsLabel, addressLabel, locationIconImageView, distanceLabel, spinner, availableRoomsLabel]
+        let viewElements = [hotelImageView, hotelNameLabel, starIconImageView, starsLabel, addressLabel, locationIconImageView, distanceLabel, spinner, availableRoomsLabel, mapView]
         viewElements.forEach { (element) in
             element.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(element)
@@ -179,7 +192,12 @@ extension DetailedHotelViewController {
             
             availableRoomsLabel.topAnchor.constraint(equalTo: locationIconImageView.bottomAnchor, constant: 10),
             availableRoomsLabel.leadingAnchor.constraint(equalTo: locationIconImageView.leadingAnchor),
-            availableRoomsLabel.trailingAnchor.constraint(equalTo: starIconImageView.leadingAnchor)
+            availableRoomsLabel.trailingAnchor.constraint(equalTo: starIconImageView.leadingAnchor),
+            
+            mapView.topAnchor.constraint(equalTo: availableRoomsLabel.bottomAnchor, constant: 10),
+            mapView.leadingAnchor.constraint(equalTo: availableRoomsLabel.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: starIconImageView.trailingAnchor),
+            mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10)
         ])
     }
     
