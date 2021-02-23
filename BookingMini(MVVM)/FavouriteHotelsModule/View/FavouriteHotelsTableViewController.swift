@@ -18,12 +18,14 @@ class FavouriteHotelsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Favourite Hotels"
         tableView.register(FavouritesTableViewCell.self, forCellReuseIdentifier: "FavouritesCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel = FavouriteHotelsViewModel()
+
         tableView.reloadData()
     }
 
@@ -36,13 +38,13 @@ class FavouriteHotelsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return viewModel.favHotels.count
+        return viewModel.favHotels.hotelName.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavouritesCell", for: indexPath)
-        cell.textLabel?.text = viewModel.favHotels[indexPath.row]
+        cell.textLabel?.text = viewModel.favHotels.hotelName[indexPath.row]
         // Configure the cell...
 
         return cell

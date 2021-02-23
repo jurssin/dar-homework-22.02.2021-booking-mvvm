@@ -9,9 +9,9 @@
 import Foundation
 class FavouriteHotelsViewModel {
     
-    var favHotels: [String] = []
+    var favHotels = Favourites()
     
     init() {
-        favHotels = UserDefaults.standard.stringArray(forKey: "Hotel") ?? []
+        favHotels.hotelName = UserDefaults.standard.stringArray(forKey: "Hotel") ?? []
     }
 }
