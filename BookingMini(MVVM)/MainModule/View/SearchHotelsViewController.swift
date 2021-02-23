@@ -14,6 +14,7 @@ class SearchHotelsViewController: UIViewController {
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.showsCancelButton = true
+        searchBar.tintColor = .black
         searchBar.placeholder = "Search hotels by address..."
         searchBar.delegate = self
         return searchBar
