@@ -13,7 +13,7 @@ class SearchHotelsViewModel {
     
     let provider = MoyaProvider<APIService>()
     var hotels = [Hotel]()
-    var dupHotels = [Hotel]()
+    //var dupHotels = [Hotel]()
     
     func getHotels(completion: @escaping () -> ()) {
         provider.request(.getHotels) { [weak self] (result) in

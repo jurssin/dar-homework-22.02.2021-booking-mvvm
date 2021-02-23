@@ -32,7 +32,7 @@ class SearchHotelsViewController: UIViewController {
         tableView.register(SearchHotelsTableViewCell.self, forCellReuseIdentifier: "HotelsCell")
         //tableView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 5, right: 0)
-        //tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
         tableView.backgroundColor = .secondarySystemBackground
         tableView.rowHeight = 200
         tableView.dataSource = self

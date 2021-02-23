@@ -83,7 +83,7 @@ class DetailedHotelViewController: UIViewController {
         let label = UILabel()
         //label.backgroundColor = .systemPink
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
         return label
     }()
@@ -98,14 +98,24 @@ class DetailedHotelViewController: UIViewController {
         setupView()
         
         viewModel.getDetailedHotels(id: hotelId!) { [weak self] (hotel) in
-            guard let imageName = hotel?.image else { return }
-            self?.setHotelImage(imageName: imageName)
+           
             self?.hotelNameLabel.text = self?.hotelName
-            guard let stars = hotel?.stars else { return }
-            self?.starsLabel.text = String(stars)
             self?.addressLabel.text = hotel?.address
             self?.distanceLabel.text = "\((hotel?.distance) ?? 0.0) meters away from center"
             self?.availableRoomsLabel.text = "Rooms available: \(hotel?.suitesAvailability ?? "No available rooms")"
+            guard let stars = hotel?.stars else {
+                self?.spinner.stopAnimating()
+                return
+            }
+            self?.starsLabel.text = String(stars)
+            guard let imageName = hotel?.image else {
+                self?.setHotelImage(imageName: "no image")
+                self?.spinner.stopAnimating()
+                return
+            }
+            self?.setHotelImage(imageName: imageName)
+            self?.spinner.stopAnimating()
+
         }
         // Do any additional setup after loading the view.
     }
@@ -118,14 +128,13 @@ class DetailedHotelViewController: UIViewController {
                 self?.hotelImageView.image = UIImage(named: "no image")
             }
         }
-        spinner.stopAnimating()
     }
 }
 
 extension DetailedHotelViewController {
     private func setupView() {
+        navigationBarSetup()
         spinner.startAnimating()
-        title = hotelName
         view.backgroundColor = .secondarySystemBackground
         
         let viewElements = [hotelImageView, hotelNameLabel, starIconImageView, starsLabel, addressLabel, locationIconImageView, distanceLabel, spinner, availableRoomsLabel]
@@ -172,5 +181,35 @@ extension DetailedHotelViewController {
             availableRoomsLabel.leadingAnchor.constraint(equalTo: locationIconImageView.leadingAnchor),
             availableRoomsLabel.trailingAnchor.constraint(equalTo: starIconImageView.leadingAnchor)
         ])
+    }
+    
+    private func navigationBarSetup() {
+        title = hotelName
+        var button: UIBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(addToFavourites))
+
+        viewModel.favHotels = UserDefaults.standard.stringArray(forKey: "Hotel") ?? []
+
+        if viewModel.favHotels.contains(hotelName!) {
+                    button = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(addToFavourites))
+                }
+                self.navigationController?.navigationBar.tintColor = .black
+                self.navigationItem.rightBarButtonItem = button
+                
+
+    }
+    @objc func addToFavourites() {
+        guard let hotelTitle = title else { return }
+        if !viewModel.favHotels.contains(hotelTitle) {
+            viewModel.favHotels.append(hotelTitle)
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
+            UserDefaults.standard.setValue(viewModel.favHotels, forKey: "Hotel")
+        }
+        else {
+            guard let hotel = viewModel.favHotels.firstIndex(of: hotelTitle) else { return }
+            viewModel.favHotels.remove(at: hotel)
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
+            UserDefaults.standard.setValue(viewModel.favHotels, forKey: "Hotel")
+        }
+        print(viewModel.favHotels)
     }
 }

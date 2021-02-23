@@ -14,6 +14,7 @@ class DetailedHotelViewModel {
     
     let provider = MoyaProvider<APIService>()
     var detailedHotel: DetailedHotel?
+    var favHotels: [String] = []
     
     public func getDetailedHotels(id: Int, completion: @escaping (DetailedHotel?) -> ()) {
         provider.request(.getDetailedHotel(id: String(id))) { [weak self] (result) in

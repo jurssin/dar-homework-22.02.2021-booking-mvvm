@@ -24,6 +24,8 @@
 		CEE7735825E370B0001066A0 /* DetailedHotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735725E370B0001066A0 /* DetailedHotelViewController.swift */; };
 		CEE7735A25E37FDF001066A0 /* DetailedHotelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735925E37FDF001066A0 /* DetailedHotelViewModel.swift */; };
 		CEE7735C25E4168A001066A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7735B25E4168A001066A0 /* Extensions.swift */; };
+		CEE7736225E5801E001066A0 /* FavouriteHotelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7736125E5801E001066A0 /* FavouriteHotelsViewModel.swift */; };
+		CEE7736425E58272001066A0 /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE7736325E58272001066A0 /* FavouritesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		CEE7735725E370B0001066A0 /* DetailedHotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHotelViewController.swift; sourceTree = "<group>"; };
 		CEE7735925E37FDF001066A0 /* DetailedHotelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHotelViewModel.swift; sourceTree = "<group>"; };
 		CEE7735B25E4168A001066A0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CEE7736125E5801E001066A0 /* FavouriteHotelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteHotelsViewModel.swift; sourceTree = "<group>"; };
+		CEE7736325E58272001066A0 /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +82,11 @@
 		CE66DE4E25E243F500617884 /* BookingMini(MVVM) */ = {
 			isa = PBXGroup;
 			children = (
+				CEE7735D25E57E2A001066A0 /* FavouriteHotelsModule */,
 				CEE7735325E36AA1001066A0 /* DetailedHotelModule */,
 				CEE7735225E36562001066A0 /* NetworkLayer */,
 				CEBDE40325E248E5001E6713 /* MainModule */,
 				CEBDE40425E248F8001E6713 /* Common */,
-				CE66DE6325E2482100617884 /* FavouriteHotelsTableViewController.swift */,
 				CE66DE5D25E243F700617884 /* Info.plist */,
 			);
 			path = "BookingMini(MVVM)";
@@ -177,6 +181,40 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CEE7735D25E57E2A001066A0 /* FavouriteHotelsModule */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7736025E57E4F001066A0 /* ViewModel */,
+				CEE7735F25E57E4A001066A0 /* View */,
+				CEE7735E25E57E41001066A0 /* Model */,
+			);
+			path = FavouriteHotelsModule;
+			sourceTree = "<group>";
+		};
+		CEE7735E25E57E41001066A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEE7735F25E57E4A001066A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE66DE6325E2482100617884 /* FavouriteHotelsTableViewController.swift */,
+				CEE7736325E58272001066A0 /* FavouritesTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEE7736025E57E4F001066A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEE7736125E5801E001066A0 /* FavouriteHotelsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -262,11 +300,13 @@
 				CEE7735825E370B0001066A0 /* DetailedHotelViewController.swift in Sources */,
 				CE66DE5425E243F500617884 /* SearchHotelsViewController.swift in Sources */,
 				CEBDE40F25E24E4B001E6713 /* APIService.swift in Sources */,
+				CEE7736425E58272001066A0 /* FavouritesTableViewCell.swift in Sources */,
 				CEE7735C25E4168A001066A0 /* Extensions.swift in Sources */,
 				CE66DE5025E243F500617884 /* AppDelegate.swift in Sources */,
 				CE66DE6425E2482100617884 /* FavouriteHotelsTableViewController.swift in Sources */,
 				CE66DE5225E243F500617884 /* SceneDelegate.swift in Sources */,
 				CEE7734F25E29C5B001066A0 /* SearchHotelsViewModel.swift in Sources */,
+				CEE7736225E5801E001066A0 /* FavouriteHotelsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

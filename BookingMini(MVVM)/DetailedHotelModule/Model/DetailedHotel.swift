@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DetailedHotel: Codable {
+struct DetailedHotel: Codable, Equatable {
     let id: Int
     let name, address: String
     let stars, distance: Double

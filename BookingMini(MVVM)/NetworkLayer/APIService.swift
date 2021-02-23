@@ -18,7 +18,6 @@ extension APIService: TargetType {
     var baseURL: URL {
         return URL(string: "https://raw.githubusercontent.com/iMofas/ios-android-test/master")!
     }
-    
     var path: String {
         switch self {
         
