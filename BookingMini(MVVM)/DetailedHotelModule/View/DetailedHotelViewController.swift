@@ -108,19 +108,9 @@ class DetailedHotelViewController: UIViewController {
         
         viewModel.getDetailedHotels(id: hotelId!) { [weak self] (hotel) in
             
-            self?.annotation.coordinate = CLLocationCoordinate2D(latitude: hotel?.lat ?? 0.0, longitude: hotel?.lon ?? 0.0)
-            self?.mapView.addAnnotation(self!.annotation)
-            self?.region = .init(center: (self?.annotation.coordinate)!, latitudinalMeters: 500, longitudinalMeters: 500)
-            self?.mapView.setRegion(self!.region, animated: true)
-            self?.hotelNameLabel.text = self?.hotelName
-            self?.addressLabel.text = hotel?.address
-            self?.distanceLabel.text = "\((hotel?.distance) ?? 0.0) meters away from center"
-            self?.availableRoomsLabel.text = "Rooms available: \(hotel?.suitesAvailability ?? "No available rooms")"
-            guard let stars = hotel?.stars else {
-                self?.spinner.stopAnimating()
-                return
-            }
-            self?.starsLabel.text = String(stars)
+            self?.setMap(with: hotel?.lat, lon: hotel?.lon)
+            self?.setData(hotelName: hotel?.name, address: hotel?.address, distance: hotel?.distance, rooms: hotel?.suitesAvailability, stars: hotel?.stars)
+            
             guard let imageName = hotel?.image else {
                 self?.setHotelImage(imageName: "no image")
                 self?.spinner.stopAnimating()
@@ -141,6 +131,22 @@ class DetailedHotelViewController: UIViewController {
                 self?.hotelImageView.image = UIImage(named: "no image")
             }
         }
+    }
+    
+    private func setData(hotelName: String?, address: String?, distance: Double?, rooms: String?, stars: Double?) {
+        self.hotelNameLabel.text = hotelName
+        self.addressLabel.text = address
+        self.distanceLabel.text = "\(distance ?? 0.0) meters away from center"
+        self.availableRoomsLabel.text = "Rooms available: \(rooms ?? "No available rooms")"
+        self.starsLabel.text = String(stars ?? 0.0)
+    }
+    
+    private func setMap(with lat: Double?, lon: Double?) {
+        self.annotation.coordinate = CLLocationCoordinate2D(latitude: lat ?? 0.0, longitude: lon ?? 0.0)
+        self.mapView.addAnnotation(self.annotation)
+        self.region = .init(center: (self.annotation.coordinate), latitudinalMeters: 500, longitudinalMeters: 500)
+        self.mapView.setRegion(self.region, animated: true)
+        
     }
 }
 
